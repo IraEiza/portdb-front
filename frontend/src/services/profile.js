@@ -6,7 +6,7 @@ const API = axios.create({
 
 async function getProfile() {
   const result = await API.get('profile')
-  console.log(result)
+  /* console.log(result) */
   return result.data 
 }
 
