@@ -5,11 +5,9 @@ const API = axios.create({
 })
 
 async function getProfile() {
-    API.get('users')
-      .then(result => {
-        console.log(result)
-      })
-      .catch(error => console.log(error))
+  const result = await API.get('profile')
+  console.log(result)
+  return result.data 
 }
 
 export default {

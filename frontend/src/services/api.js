@@ -36,7 +36,17 @@ async function login(user) {
   }
 }
 
+async function getProfileInfo() {
+  const response = await API.get('profile', {
+    headers: {
+      token: localStorage.getItem('token')
+    }
+  })
+  return response.data
+}
+
 export default {
   signup,
   login,
+  getProfileInfo
 }

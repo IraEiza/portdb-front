@@ -6,20 +6,24 @@
 </template>
 
 <script setup>
-    import profile from '../services/profile.js';
+    import API from '../services/api.js';
 </script>
 
 <script>
     export default {
         data() {
             return {
-                profileData: {}
+                profileData: {
+                    name: '',
+                    dni: '',
+                    email: ''
+                }
             }
         },
-        async beforeCreate() {
-            const result = await profile.getProfile()
+        mounted: async() => {
+            const result = await API.getProfileInfo()
             console.log(result)
-            this.profileData = result
+            this.profileData.name = result.name
         }
     }
 </script>
