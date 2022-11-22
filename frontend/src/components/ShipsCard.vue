@@ -1,9 +1,8 @@
 <template>
     <div class="card">
-        <p>name: {{profile.name}}</p>
-        <p>DNI: {{profile.dni}}</p>
-        <p>email: {{profile.email}}</p>
-        <button class="edit-button" @click="changeProfile">Edit</button>
+        <p>name: {{ship.name}}</p>
+        <p>reg: {{ship.reg}}</p>
+        <button class="edit-button">Edit</button>
     </div>
 </template>
 
@@ -14,13 +13,7 @@
 <script>
     export default {
         props: {
-            profile: Object,
-            editProfile: Boolean
-        },
-        methods: {
-            changeProfile() {
-                this.$emit("change-profile")
-            }
+            ship: Object
         }
     }
 </script>
