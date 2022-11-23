@@ -1,10 +1,14 @@
 <template>
   <div class="search">
-    <input type="date" name="" id="" v-model="inDate">
-    <input type="date" name="" id="" v-model="outDate">
+    <input type="date" name="" id="" v-model="resData.inDate">
+    <input type="date" name="" id="" v-model="resData.outDate">
     <button @click.prevent="getAvailableDocks">Search</button>
+    <div id="ship" v-if="chooseShip">
+      <label for="shipname">Ship's name: </label> <br/>
+      <input type="text" name="" id="shipname" placeholder=" Introduce ship's name" v-model="resData.ship">
+    </div>
   </div>
-  <DockCardVue v-for="dock in availableDocks" :dock="dock" />
+  <DockCardVue v-for="dock in availableDocks" :dock="dock" @make-reservation="makeReservation"/>
 </template>
 
 
@@ -17,16 +21,30 @@ import DockCardVue from "../components/DockCard.vue";
   export default {
     data() {
       return {
+        chooseShip: false,
         availableDocks: [],
-        inDate: '',
-        outDate: ''
+        resData: {
+          inDate: '',
+          outDate: '',
+          ship: ''
+        }
       }
     },
     methods: {
       async getAvailableDocks() {
-        const response = await dockAPI.getAvailableDocks(this.inDate, this.outDate)
-        console.log(response)
+        const response = await dockAPI.getAvailableDocks({"inDate": this.resData.inDate, "outDate": this.resData.outDate})
         this.availableDocks = response
+        this.chooseShip = !this.chooseShip
+      },
+      async makeReservation(dockNumber) {
+        const response = await dockAPI.reserveDock({
+          "dock": dockNumber,
+          "ship": this.resData.ship,
+          "inDate": this.resData.inDate,
+          "outDate": this.resData.inDate
+        })
+        this.availableDocks = this.availableDocks.filter(dock => dock.dock !== dockNumber)
+        this.resData.ship = ''
       }
     }
   }

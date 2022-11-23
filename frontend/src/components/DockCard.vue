@@ -1,18 +1,22 @@
 <template>
     <div class="card">
         <span>dock: {{dock.dock}}</span>
-        <button class="reserve-button">Reserve</button>
+        <button class="reserve-button" @click.prevent="makeReservation">Reserve</button>
     </div>
 </template>
 
 <script setup>
-
 </script>
 
 <script>
     export default {
         props: {
             dock: Object
+        },
+        methods: {
+            async makeReservation() {
+                this.$emit('makeReservation', this.dock.dock)
+            }
         }
     }
 </script>
