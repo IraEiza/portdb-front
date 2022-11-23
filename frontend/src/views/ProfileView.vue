@@ -28,7 +28,6 @@
         data() {
             return {
                 editProfile: false,
-                editShip: false,
                 profileData: {
                     name: '',
                     dni: '',

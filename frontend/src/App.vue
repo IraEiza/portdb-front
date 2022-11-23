@@ -22,7 +22,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-dark p-4">
-          <h6 class="text-white h6"><RouterLink :to="{name: 'home'}">HOME</RouterLink></h6>
+          <h5 class="text-white h6"><RouterLink :to="{name: 'home'}">HOME</RouterLink></h5>
           <span class="text-muted">Toggleable via the navbar brand.</span>
         </div>
       </div>
@@ -34,7 +34,7 @@ import { RouterLink, RouterView } from 'vue-router'
     </section>
 
     <footer id="footer">
-      <h1>This is our footer</h1>
+      <h6>© PORT-Utatis 25/11/2022</h6>
     </footer>
   </div>
   
