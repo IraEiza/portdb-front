@@ -43,8 +43,8 @@ import { RouterLink, RouterView } from 'vue-router'
 <style scoped>
 
 #page {
-  display: grid;
-  grid-template-rows: 0.5fr 2fr 1fr;
+  display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
 }
@@ -63,6 +63,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 #footer {
   background-color: cornflowerblue;
+  margin-top: auto;
   color: white;
   width: 100vw;
   height: 10vh;

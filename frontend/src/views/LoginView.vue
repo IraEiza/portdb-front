@@ -32,7 +32,6 @@
         methods: {
             async loginUser() {
                 const response = await api.login(this.user)
-                console.log(response)
                     if (response.data.error) {
                         alert(response.data.error)
                     }
