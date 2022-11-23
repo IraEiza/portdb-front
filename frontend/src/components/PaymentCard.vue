@@ -1,12 +1,14 @@
 <template>
     <div class="card">
-        <p>paid: {{payment.paid}}</p>
+        <p v-if="payment.paid">paid: YES</p>
+        <p v-else>paid: NO</p>
         <p>quantity: {{payment.quantity}}</p>
         <p>dock: {{payment.dock.dock}}</p>
         <p>resDate: {{formatResDate}}</p>
         <p>inDate: {{formatInDate}}</p>
         <p>outDate: {{formatOutDate}}</p>
-        <RouterLink :to="{name: 'profile'}"><button class="pay-button" @click.prevent="payBill">Pay</button></RouterLink>
+        <p v-if="payment.paid">payDate: {{formatPayDate}}</p>
+        <RouterLink :to="{name: 'profile'}" v-if="!payment.paid"><button class="pay-button" @click.prevent="payBill">Pay</button></RouterLink>
     </div>
 </template>
 
@@ -29,6 +31,9 @@
             },
             formatOutDate() {
                 return new Date(this.payment.outDate).toLocaleDateString("es-ES")
+            },
+            formatPayDate() {
+                return new Date(this.payment.payDate).toLocaleDateString("es-ES")
             }
         },
         methods: {
@@ -50,11 +55,17 @@
     .card {
         background-color: antiquewhite;
         padding: 15px;
+        margin: 10px ;
+        max-width: 300px;
+        height: auto;
+
     }
 
     .pay-button {
         background-color: rgb(145, 250, 64);
         width: 50px;
     }
+
+
 
 </style>
