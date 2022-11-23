@@ -4,7 +4,7 @@
 <template>
   <div class="header-img"></div>
   <div class="about-us">
-    <div>
+    <div class="section">
       <h5>Welcome to PORT-Utatis!</h5>
       <h6>ABOUT US</h6>
       <p>Located in the center of Avenida Marítima, next to Las Alcaravaneras beach, PORT-Utatis has the best nautical and reparation services focused to ship care. </p>
@@ -64,6 +64,9 @@
     background-position: center;
     height: 100px;
     width: 100vw;
+  }
+  .section {
+    padding: 10px;
   }
 
 </style>
