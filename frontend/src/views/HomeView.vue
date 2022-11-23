@@ -2,16 +2,16 @@
 </script>
 
 <template>
-  <div class="header-img">PORT-Utatis</div>
-  <main class="main">
-    <div>
-      <h5>Wellcome to PORT-Utatis!</h5>
+  <div class="header-img"></div>
+  <div class="about-us">
+    <div class="section">
+      <h5>Welcome to PORT-Utatis!</h5>
       <h6>ABOUT US</h6>
       <p>Located in the center of Avenida Marítima, next to Las Alcaravaneras beach, PORT-Utatis has the best nautical and reparation services focused to ship care. </p>
       <p>Our pier also has the collaboration of large companies that offer their services to our clients.</p>
     </div>
     
-  </main>
+  </div>
 
   <div class="img">
     <img src="../components/icons/atención24h.png" alt="">
@@ -35,13 +35,13 @@
 
 <style scoped>
 
-  .main {
-    padding: 10px;
-    height: 100;
+  .about-us { 
+    width: fit-content;
     text-align: justify;
+    margin: 0 auto;
   }
 
-  .main h5 {
+  .about-us h5 {
     color: rgb(51, 113, 247);
     text-align: center;
     margin-top: 25px;
@@ -64,6 +64,9 @@
     background-position: center;
     height: 100px;
     width: 100vw;
+  }
+  .section {
+    padding: 10px;
   }
 
 </style>
