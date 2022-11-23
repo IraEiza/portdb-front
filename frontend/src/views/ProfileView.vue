@@ -2,12 +2,11 @@
     <div id="profile">
         <h1>Profile data</h1>
         <ProfileCard :profile="profileData" :editProfile="editProfile" @change-profile="changeProfile" v-if="!editProfile"/>
-        <EditProfileCard :profile="profileData" @save-data="saveData" v-if="editProfile"/>
+        <EditProfileCard :profile="profileData" @save-data="saveProfile" v-if="editProfile"/>
         <div class="section">
             <span>My ships</span> <RouterLink :to="{name: 'useraddship'}" ><button class="bi bi-plus-lg add-button"></button></RouterLink> 
         </div>
-        <EditShipCard v-for="(ship, idx) in ships" :key="idx" :ship="ship" v-if="editShip"/>
-        <ShipCard v-for="(ship, idx) in ships" :key="idx" :ship="ship" v-if="!editShip"/>
+        <ShipList v-for="(ship, idx) in ships" :key="idx" :ship="ship" @save-ship="saveShip"/>
         <h1>Payments</h1>
         <PaymentCard v-for="(payment, idx) in getPayments" :key="idx" :payment="payment" @updt-payments="updtPayments"/>
 
@@ -18,8 +17,7 @@
     import API from '../services/profile.js';
     import ProfileCard from '../components/ProfileCard.vue';
     import EditProfileCard from '../components/EditProfileCard.vue';
-    import ShipCard from '../components/ShipsCard.vue';
-    import EditShipCard from '../components/EditShipsCard.vue';
+    import ShipList from '../components/ShipList.vue';
     import PaymentCard from '../components/PaymentCard.vue';
     import { RouterLink } from 'vue-router';
     import profile from '../services/profile.js';
@@ -49,10 +47,15 @@
             changeProfile() {
                 this.editProfile = !this.editProfile
             },
-            async saveData(updtdProfile) {
+            async saveProfile(updtdProfile) {
                 this.profileData = updtdProfile
                 await profile.updateProfile(updtdProfile)
                 this.changeProfile()
+            },
+            async saveShip(updtdShip, id) {
+                let idx = this.ships.findIndex(ship => ship._id === id)
+                this.ships[idx] = updtdShip
+                await profile.updateShip(updtdShip, updtdShip._id)
             },
             updtPayments(removeId) {
                 let updtdbills = this.bills.filter(bill => bill._id !== removeId)

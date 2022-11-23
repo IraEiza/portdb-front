@@ -49,10 +49,20 @@ async function updateProfile(newData) {
   return response.data
 }
 
+async function updateShip(newData, shipId) {
+  const response = await API.put(`profile/updateShip/${shipId}`, newData, {
+    headers: {
+      token: localStorage.getItem('token')
+    }
+  })
+  return response.data
+}
+
 export default {
   getProfileInfo,
   getOwnBills,
   addOwnShip,
   payBill,
-  updateProfile
+  updateProfile,
+  updateShip
 }

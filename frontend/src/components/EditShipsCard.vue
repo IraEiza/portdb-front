@@ -22,6 +22,11 @@
     export default {
         props: {
             ship: Object
+        },
+        methods: {
+            saveData() {
+                this.$emit("save-ship", this.ship)
+            }
         }
     }
 </script>

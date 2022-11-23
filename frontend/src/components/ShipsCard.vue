@@ -2,7 +2,7 @@
     <div class="card">
         <p>name: {{ship.name}}</p>
         <p>reg: {{ship.reg}}</p>
-        <button class="edit-button">Edit</button>
+        <button class="edit-button" @click="changeShip">Edit</button>
     </div>
 </template>
 
@@ -14,6 +14,11 @@
     export default {
         props: {
             ship: Object
+        },
+        methods: {
+            changeShip() {
+                this.$emit("change-ship")
+            }
         }
     }
 </script>
