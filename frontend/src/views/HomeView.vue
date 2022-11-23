@@ -2,19 +2,33 @@
 </script>
 
 <template>
+  <div class="header-img">PORT-Utatis</div>
   <main class="main">
     <div>
-      <h1>ABOUT US</h1>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut aliquid nesciunt, expedita rem, saepe ut vel veritatis voluptatum incidunt tempora consequuntur dolorem numquam a illum possimus iure sed enim adipisci.</p>
+      <h5>Wellcome to PORT-Utatis!</h5>
+      <h6>ABOUT US</h6>
+      <p>Located in the center of Avenida Marítima, next to Las Alcaravaneras beach, PORT-Utatis has the best nautical and reparation services focused to ship care. </p>
+      <p>Our pier also has the collaboration of large companies that offer their services to our clients.</p>
     </div>
     
   </main>
 
-  <div class="img"></div>
-  <div class="img"></div>
-  <div class="img"></div>
-  <div class="img"></div>
-  <div class="img"></div>
+  <div class="img">
+    <img src="../components/icons/atención24h.png" alt="">
+    <p>Customer services 24/7</p>
+  </div>
+  <div class="img">
+    <img src="../components/icons/sedeElectrónica.png" alt="">
+    <p>Online procedures</p>
+  </div>
+  <div class="img">
+    <img src="../components/icons/onlinePay.png" alt="">
+    <p>Online pay available</p>
+  </div>
+  <div class="img">
+    <img src="../components/icons/collaboration.png" alt="">
+    <p>Partners</p>
+  </div>
 
   
 </template>
@@ -24,13 +38,32 @@
   .main {
     padding: 10px;
     height: 100;
-    border: solid black 1px;
+    text-align: justify;
+  }
+
+  .main h5 {
+    color: rgb(51, 113, 247);
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 30px;
   }
   .img {
-    width: 100px;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    margin: 0px auto;
+  }
+  .img img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .header-img {
+    background-image: url('../components/icons/cabeceraHome.jpg');
+    background-size: cover;
+    background-position: center;
     height: 100px;
-    background-color: antiquewhite;
-    margin: 25px auto;
+    width: 100vw;
   }
 
 </style>
