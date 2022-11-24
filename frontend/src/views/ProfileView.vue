@@ -58,7 +58,7 @@
           aria-labelledby="headingTwo"
           data-bs-parent="#accordionExample"
         >
-          <div class="accordion-body">
+          <div class="accordion-body " >
             <div class="section">
               <p>
                 <strong>Add ship </strong>
@@ -67,13 +67,15 @@
                 ></RouterLink>
               </p>
             </div>
-
-            <ShipList
+            <div class="card-display">
+                          <ShipList
               v-for="(ship, idx) in ships"
               :key="idx"
               :ship="ship"
               @save-ship="saveShip"
             />
+            </div>
+
           </div>
         </div>
       </div>

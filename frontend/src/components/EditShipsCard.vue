@@ -35,6 +35,9 @@ import SaveButton from './SaveButton.vue';
     .card {
         background-color: antiquewhite;
         padding: 15px;
+        margin: 10px ;
+        max-width: 300px;
+        height: auto;
     }
 
     .card div {

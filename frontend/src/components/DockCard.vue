@@ -30,6 +30,8 @@ import { useAuthStore } from '../stores/store'
 <style scoped>
     .card {
         background-color: antiquewhite;
+        width: 90vw;
+        margin: 5px auto;
         padding: 15px;
         display: flex;
         flex-direction: row;
@@ -44,6 +46,13 @@ import { useAuthStore } from '../stores/store'
         padding: 0px;
         border: transparent;
         width: 100px
+    }
+
+    @media (min-width: 720px) {
+
+        .card {
+            width: 40vw;
+        }
     }
 
 </style>

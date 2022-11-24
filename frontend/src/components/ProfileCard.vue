@@ -1,8 +1,8 @@
 <template>
     <div class="card">
-        <p><strong>Name:</strong> {{profile.name}}</p>
-        <p><strong>DNI:</strong> {{profile.dni}}</p>
-        <p><strong>Email:</strong> {{profile.email}}</p>
+        <p><strong>Name:  </strong> {{profile.name}}</p>
+        <p><strong>DNI:   </strong> {{profile.dni}}</p>
+        <p><strong>Email: </strong> {{profile.email}}</p>
         <EditButton @edit="changeProfile"/>
     </div>
 </template>
@@ -29,5 +29,8 @@ import EditButton from './EditButton.vue';
     .card {
         background-color: antiquewhite;
         padding: 15px;
+        margin: 10px ;
+        max-width: 300px;
+        height: auto;
     }
 </style>

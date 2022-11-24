@@ -48,6 +48,12 @@
 
     <footer id="footer">
       <h6>© PORT-Utatis 25/11/2022</h6>
+      <div class="foo-icons">
+        <img src="./components/icons/mailico.png" alt="mail image" class="img-footer">
+        <img src="./components/icons/whatsicon.png" alt="whatsapp icon" class="img-footer">
+        <img src="./components/icons/faceicon.png" alt="facebook icon" class="img-footer">
+        <img src="./components/icons/instaicon.png" alt="instagram icon" class="img-footer">
+      </div>
     </footer>
   </div>
 </template>
@@ -99,6 +105,8 @@ export default {
   width: 100vw;
   height: 10vh;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 .nav-bar {
   color: rgb(219, 216, 208);
@@ -110,6 +118,17 @@ export default {
   background-color: rgb(65, 72, 78);
   padding: 5px 15px;
   border-radius: 10px/10px;
+}
+
+.img-footer {
+  width: 40px;
+  height: 40px;
+}
+
+.foo-icons {
+  display: flex;
+  justify-content: space-around;
+  width: 220px;
 }
 
 </style>
