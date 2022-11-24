@@ -34,6 +34,9 @@
           <h5 class="text-white h6">
             <RouterLink class="nav-bar" :to="{ name: 'reservation' }">RESERVATION</RouterLink>
           </h5>
+          <h5 class="text-white h6">
+            <RouterLink class="nav-bar" :to="{ name: 'others' }">OTHER SERVICES</RouterLink>
+          </h5>
         </div>
       </div>
 

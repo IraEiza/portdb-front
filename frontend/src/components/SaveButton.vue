@@ -23,6 +23,14 @@
         border: transparent;
         width: 100%;
         
-    }
+}
+
+.save:hover {
+  background-color: orange;
+ 
+}
+.save:focus {
+  background-color: orange;
+}
 
 </style>

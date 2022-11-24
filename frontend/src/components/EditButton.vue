@@ -22,7 +22,7 @@
   padding: 0px;
   border: transparent;
   width: 100%;
-  
 }
+
 
 </style>
