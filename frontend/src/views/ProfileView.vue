@@ -61,7 +61,7 @@
           <div class="accordion-body">
             <div class="section">
               <p>
-                Add ship
+                <strong>Add ship </strong>
                 <RouterLink :to="{ name: 'useraddship' }"
                   ><button class="bi bi-plus-lg add-button"></button
                 ></RouterLink>
@@ -223,6 +223,7 @@ h1 {
   background-color: orange;
   border-radius: 10%/10%;
   width: 40px;
+  border: transparent;
 }
 
 @media (max-width: 719px) {

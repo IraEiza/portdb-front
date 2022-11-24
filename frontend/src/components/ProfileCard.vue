@@ -1,14 +1,14 @@
 <template>
     <div class="card">
-        <p>name: {{profile.name}}</p>
-        <p>DNI: {{profile.dni}}</p>
-        <p>email: {{profile.email}}</p>
-        <button class="edit-button" @click="changeProfile">Edit</button>
+        <p><strong>Name:</strong> {{profile.name}}</p>
+        <p><strong>DNI:</strong> {{profile.dni}}</p>
+        <p><strong>Email:</strong> {{profile.email}}</p>
+        <EditButton @edit="changeProfile"/>
     </div>
 </template>
 
 <script setup>
-
+import EditButton from './EditButton.vue';
 </script>
 
 <script>
@@ -30,12 +30,4 @@
         background-color: antiquewhite;
         padding: 15px;
     }
-
-    .edit-button {
-        background-color: orange;
-        width: 50px;
-        border-radius: 10%/10%;
-
-    }
-
 </style>

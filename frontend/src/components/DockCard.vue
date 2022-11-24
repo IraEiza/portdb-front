@@ -1,21 +1,27 @@
 <template>
     <div class="card">
-        <span>dock: {{dock.dock}}</span>
-        <button class="reserve-button" @click.prevent="makeReservation">Reserve</button>
+        <span><strong>dock {{dock.dock}}</strong></span>
+        <button class="btn btn-primary reserve-button" @click.prevent="makeReservation" v-if="store.isLoggedIn">Reserve</button>
     </div>
 </template>
 
 <script setup>
+import { useAuthStore } from '../stores/store'
 </script>
 
 <script>
     export default {
+        data() {
+            return {
+                store: useAuthStore()
+            }
+        },
         props: {
             dock: Object
         },
         methods: {
             async makeReservation() {
-                this.$emit('makeReservation', this.dock.dock)
+                this.$emit("make-reservation", this.dock.dock)
             }
         }
     }
@@ -30,9 +36,14 @@
         justify-content: space-between;
     }
     .reserve-button {
+        color: white;
+        margin-top: 5px;
+        font-weight: 700;
         background-color: orange;
-        width: 70px;
-        border-radius: 10%/10%;
+        height: 30px;
+        padding: 0px;
+        border: transparent;
+        width: 100px
     }
 
 </style>

@@ -2,20 +2,20 @@
     <div class="card">
         <form>
         <div class="mb-3">
-            <label for="name" class="form-label">name:</label>
+            <label for="name" class="form-label"><strong>Name: </strong></label>
             <input type="text" class="form-control" id="name" placeholder="Introduce your name" v-model="ship.name">
         </div>
         <div class="mb-3">
-            <label for="reg" class="form-label">reg:</label>
+            <label for="reg" class="form-label"><strong>Reg: </strong></label>
             <input type="text" class="form-control" id="reg" placeholder="Introduce your DNI or passport" v-model="ship.reg">
         </div>
-        <button type="submit" class="edit-button" @click.prevent="saveData">Save</button>
+        <SaveButton @save="saveData" />
         </form>
     </div>
 </template>
 
 <script setup>
-
+import SaveButton from './SaveButton.vue';
 </script>
 
 <script>

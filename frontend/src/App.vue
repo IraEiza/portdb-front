@@ -10,13 +10,15 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div v-if="!store.isLoggedIn">
-            <RouterLink :to="{ name: 'signup' }"><button id="signup" class="btn btn-primary">Signup</button></RouterLink>
+            <RouterLink :to="{ name: 'signup' }"><button id="signup" class="btn btn-primary">Signup</button>
+            </RouterLink>
             &nbsp;
             <RouterLink :to="{ name: 'login' }"><button id="login" class="btn btn-primary">Login</button></RouterLink>
           </div>
           <div v-else class="text-white">
-            <strong> Welcome</strong>  {{ store.userEmail }}
-            <button @click="logout">Logout</button>
+            <strong> Welcome</strong> {{ store.userEmail }}
+            <RouterLink :to="{ name: 'home' }"><button @click="logout" class="btn btn-primary">Logout</button>
+            </RouterLink>
           </div>
         </div>
       </nav>
@@ -24,9 +26,14 @@
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-dark p-4">
           <h5 class="text-white h6">
-            <RouterLink :to="{ name: 'home' }">HOME</RouterLink>
+            <RouterLink class="nav-bar" :to="{ name: 'home' }">HOME</RouterLink>
           </h5>
-          <span class="text-muted">Toggleable via the navbar brand.</span>
+          <h5 class="text-white h6" >
+            <RouterLink class="nav-bar" :to="{ name: 'profile' }" v-if="store.isLoggedIn">PROFILE</RouterLink>
+          </h5>
+          <h5 class="text-white h6">
+            <RouterLink class="nav-bar" :to="{ name: 'reservation' }">RESERVATION</RouterLink>
+          </h5>
         </div>
       </div>
 
@@ -89,6 +96,17 @@ export default {
   width: 100vw;
   height: 10vh;
   padding: 10px;
-
 }
+.nav-bar {
+  color: rgb(219, 216, 208);
+  text-decoration: none;
+}
+
+.nav-bar:hover {
+  font-weight: 700;
+  background-color: rgb(65, 72, 78);
+  padding: 5px 15px;
+  border-radius: 10px/10px;
+}
+
 </style>
