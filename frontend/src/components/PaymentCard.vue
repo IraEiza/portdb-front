@@ -1,14 +1,14 @@
 <template>
     <div class="card">
-        <p v-if="payment.paid">paid: YES</p>
-        <p v-else>paid: NO</p>
-        <p>quantity: {{payment.quantity}}</p>
-        <p>dock: {{payment.dock.dock}}</p>
-        <p>resDate: {{formatResDate}}</p>
-        <p>inDate: {{formatInDate}}</p>
-        <p>outDate: {{formatOutDate}}</p>
-        <p v-if="payment.paid">payDate: {{formatPayDate}}</p>
-        <RouterLink :to="{name: 'profile'}" v-if="!payment.paid"><button class="pay-button" @click.prevent="payBill">Pay</button></RouterLink>
+        <p v-if="payment.paid"><strong>Paid: </strong> YES</p>
+        <p v-else><strong>Paid: </strong> NO</p>
+        <p><strong>Quantity: </strong> {{payment.quantity}}</p>
+        <p><strong>Dock: </strong> {{payment.dock.dock}}</p>
+        <p><strong>Reservation date: </strong> {{formatResDate}}</p>
+        <p><strong>Check-in: </strong> {{formatInDate}}</p>
+        <p><strong>Check-out </strong> {{formatOutDate}}</p>
+        <p v-if="payment.paid"><strong>Payment date:  </strong> {{formatPayDate}}</p>
+        <RouterLink :to="{name: 'profile'}" v-if="!payment.paid"><button class="btn btn-primary pay-button" @click.prevent="payBill">Pay</button></RouterLink>
     </div>
 </template>
 
@@ -62,8 +62,12 @@
     }
 
     .pay-button {
-        background-color: rgb(145, 250, 64);
-        width: 50px;
+        font-weight: 700;
+        background-color: orange;
+        height: 30px;
+        padding: 0px;
+        border: transparent;
+        width: 100%;
     }
 
 

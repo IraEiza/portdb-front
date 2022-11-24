@@ -2,24 +2,24 @@
     <div class="card">
         <form>
         <div class="mb-3">
-            <label for="name" class="form-label">name:</label>
+            <label for="name" class="form-label"><strong>Name: </strong></label>
             <input type="text" class="form-control" id="name" placeholder="Introduce your name" v-model="profile.name">
         </div>
         <div class="mb-3">
-            <label for="dni" class="form-label">DNI:</label>
+            <label for="dni" class="form-label"><strong>DNI: </strong></label>
             <input type="text" class="form-control" id="dni" placeholder="Introduce your DNI or passport" v-model="profile.dni">
         </div>
         <div class="mb-3">
-            <label for="email" class="form-label">email:</label>
+            <label for="email" class="form-label"><strong>Email: </strong></label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Introduce your email" v-model="profile.email">
         </div>
-        <button type="submit" class="edit-button" @click.prevent="saveData">Save</button>
         </form>
+        <SaveButton @save="saveData" />
     </div>
 </template>
 
 <script setup>
-
+import SaveButton from './SaveButton.vue';
 </script>
 
 <script>
@@ -51,12 +51,4 @@
         width: 250px;
         height: 30px;
     }
-
-    .edit-button {
-        background-color: orange;
-        width: 50px;
-        border-radius: 10%/10%;
-
-    }
-
 </style>

@@ -2,11 +2,13 @@
 </script>
 
 <template>
-  <div class="header-img"></div>
+  <div class="header">
+    <p>Welcome to </p> 
+    <p id="port-utatis">PORT-Utatis!</p>
+  </div>
   <div class="about-us">
     <div class="section">
-      <h5>Welcome to PORT-Utatis!</h5>
-      <h6>ABOUT US</h6>
+      <h6><strong>ABOUT US</strong></h6>
       <p>Located in the center of Avenida Marítima, next to Las Alcaravaneras beach, PORT-Utatis has the best nautical and reparation services focused to ship care. </p>
       <p>Our pier also has the collaboration of large companies that offer their services to our clients.</p>
     </div>
@@ -41,11 +43,28 @@
     margin: 0 auto;
   }
 
-  .about-us h5 {
-    color: rgb(51, 113, 247);
+  .header {
+    background-image: url('../components/icons/cabeceraHome2.png');
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 30px;
+    color: rgb(255, 192, 20);
+
     text-align: center;
-    margin-top: 25px;
-    margin-bottom: 30px;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    text-shadow:black 2px 2px;
+  }
+  #port-utatis {
+    font-size: 50px;
+    -webkit-text-stroke: 1px rgb(0, 0, 0);
+    text-shadow:rgb(0, 0, 0) 5px 5px;
+
   }
   .img {
     text-align: center;
@@ -56,14 +75,6 @@
   .img img {
     width: 150px;
     height: 150px;
-  }
-
-  .header-img {
-    background-image: url('../components/icons/cabeceraHome.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 100px;
-    width: 100vw;
   }
   .section {
     padding: 10px;

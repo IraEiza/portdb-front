@@ -1,13 +1,13 @@
 <template>
     <div class="card">
-        <p>name: {{ship.name}}</p>
-        <p>reg: {{ship.reg}}</p>
-        <button class="edit-button" @click="changeShip">Edit</button>
+        <p><strong>Name:</strong> {{ship.name}}</p>
+        <p><strong>Reg: </strong> {{ship.reg}}</p>
+        <EditButton @edit="changeShip"/>
     </div>
 </template>
 
 <script setup>
-
+import EditButton from './EditButton.vue';
 </script>
 
 <script>
