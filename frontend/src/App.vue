@@ -1,34 +1,37 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-</script>
-
 <template>
-
   <div id="page">
     <header>
 
-           <nav class="navbar navbar-dark bg-dark">
+      <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>      
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
           </button>
-          <div >
-            <RouterLink :to="{name: 'signup'}"><button id="signup" class="btn btn-primary">Signup</button></RouterLink>
+          <div v-if="!store.isLoggedIn">
+            <RouterLink :to="{ name: 'signup' }"><button id="signup" class="btn btn-primary">Signup</button></RouterLink>
             &nbsp;
-            <RouterLink :to="{name: 'login'}"><button id="login" class="btn btn-primary">Login</button></RouterLink>
+            <RouterLink :to="{ name: 'login' }"><button id="login" class="btn btn-primary">Login</button></RouterLink>
+          </div>
+          <div v-else class="text-white">
+            <strong> Welcome</strong>  {{ store.userEmail }}
+            <button @click="logout">Logout</button>
           </div>
         </div>
       </nav>
 
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="bg-dark p-4">
-          <h5 class="text-white h6"><RouterLink :to="{name: 'home'}">HOME</RouterLink></h5>
+          <h5 class="text-white h6">
+            <RouterLink :to="{ name: 'home' }">HOME</RouterLink>
+          </h5>
           <span class="text-muted">Toggleable via the navbar brand.</span>
         </div>
       </div>
-    
+
     </header>
-      
+
     <section id="view">
       <RouterView />
     </section>
@@ -37,11 +40,29 @@ import { RouterLink, RouterView } from 'vue-router'
       <h6>© PORT-Utatis 25/11/2022</h6>
     </footer>
   </div>
-  
 </template>
 
-<style scoped>
 
+<script>
+import { RouterLink, RouterView } from 'vue-router'
+import { useAuthStore } from './stores/store'
+
+export default {
+  data() {
+    return {
+      store: useAuthStore()
+    }
+  },
+  methods: {
+    logout() {
+      this.store.logout()
+    }
+  }
+}
+
+</script>
+
+<style scoped>
 #page {
   display: flex;
   flex-direction: column;
@@ -70,5 +91,4 @@ import { RouterLink, RouterView } from 'vue-router'
   padding: 10px;
 
 }
-
 </style>

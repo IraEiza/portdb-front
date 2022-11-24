@@ -6,33 +6,29 @@ const API = axios.create({
 
 async function signup(newUser) {
   try {
-    const response = await API.post('auth/signup', newUser, {
+    const {data} = await API.post('auth/signup', newUser, {
       headers: {
         'Content-Type': 'application/json;charset=UTF-8',
         'Access-Control-Allow-Origin': '*'
       }
     })
-    localStorage.setItem('token', response.data.token)
-    localStorage.setItem('email', response.data.email)
-    return response
+    return data
   } catch (error) {
-    return 'error'
+    return {error: error.message}
   }
 }
 
 async function login(user) {
   try {
-    const response = await API.post('auth/login', user, {
+    const {data} = await API.post('auth/login', user, {
       headers: {
         'Content-Type': 'application/json;charset=UTF-8',
         'Access-Control-Allow-Origin': '*'
       }
     }) 
-    localStorage.setItem('token', response.data.token)
-    localStorage.setItem('email', response.data.email)
-    return response
+    return data
   } catch(error) {
-    return 'error'
+    return {error: error.message}
   }
 }
 
