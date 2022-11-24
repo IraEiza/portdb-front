@@ -54,4 +54,10 @@ export default {
   border-radius: 10px/10px;
   background-color: rgb(247, 219, 171);
 }
+
+@media (min-width: 720px){
+  #form {
+    width: 40vw;
+  }
+}
 </style>

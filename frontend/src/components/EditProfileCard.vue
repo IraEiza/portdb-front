@@ -6,7 +6,7 @@
             <input type="text" class="form-control" id="name" placeholder="Introduce your name" v-model="profile.name">
         </div>
         <div class="mb-3">
-            <label for="dni" class="form-label"><strong>DNI: </strong></label>
+            <label for="dni" class="form-label"><strong>DNI : </strong></label>
             <input type="text" class="form-control" id="dni" placeholder="Introduce your DNI or passport" v-model="profile.dni">
         </div>
         <div class="mb-3">
@@ -39,6 +39,9 @@ import SaveButton from './SaveButton.vue';
     .card {
         background-color: antiquewhite;
         padding: 15px;
+        margin: 10px auto;
+        width: 400px;
+        height: auto;
     }
 
     .card div {
@@ -50,5 +53,16 @@ import SaveButton from './SaveButton.vue';
     input {
         width: 250px;
         height: 30px;
+    }
+
+    @media (max-width: 719px){
+        .card {
+        background-color: antiquewhite;
+        padding: 10px;
+        margin: 10px ;
+        width: 320px;
+        height: auto;
+    }
+
     }
 </style>

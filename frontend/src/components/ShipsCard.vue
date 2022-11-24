@@ -27,6 +27,9 @@ import EditButton from './EditButton.vue';
     .card {
         background-color: antiquewhite;
         padding: 15px;
+        margin: 10px ;
+        width: 250px;
+        height: auto;
     }
 
     .edit-button {
