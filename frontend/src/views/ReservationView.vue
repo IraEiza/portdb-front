@@ -5,22 +5,15 @@
       <input type="date" name="" id="in-date" v-model="resData.inDate" />
       <label for="out-date"><strong>To: </strong></label>
       <input type="date" name="" id="out-date" v-model="resData.outDate" />
-      <button
-        class="btn btn-primary search-btn"
-        @click.prevent="getAvailableDocks"
-      >
+      <button class="btn btn-primary search-btn" @click.prevent="getAvailableDocks">
         Search
       </button>
     </div>
 
     <div id="ship" v-if="chooseShip & store.isLoggedIn">
       <label for="shipname"><strong>Ship's name:</strong> </label>
-      <select
-        class="form-select choose"
-        aria-label="Default select example"
-        v-model="resData.ship"
-        placeholder="Choose a ship"
-      >
+      <select class="form-select choose" aria-label="Default select example" v-model="resData.ship"
+        placeholder="Choose a ship">
         <option value="" hidden selected>Choose a ship</option>
         <option v-for="(ship, idx) in shipList" :key="idx" :value="ship.name">
           {{ ship.name }}
@@ -28,11 +21,9 @@
       </select>
     </div>
   </div>
-  <DockCardVue
-    v-for="dock in availableDocks"
-    :dock="dock"
-    @make-reservation="makeReservation"
-  />
+  <div id="docks">
+    <DockCardVue v-for="dock in availableDocks" :dock="dock" @make-reservation="makeReservation" />
+  </div>
 </template>
 
 <script setup>
@@ -93,17 +84,11 @@ export default {
 </script>
 
 <style scoped>
-.search {
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  margin-bottom: 5px;
-  padding: 5px;
-}
-
 input {
   border: black solid 1px;
   height: 30px;
 }
+
 .search-btn {
   /*  margin-top: 5px; */
   font-weight: 700;
@@ -113,18 +98,40 @@ input {
   border: transparent;
   width: 100%;
 }
+.choose option {
+  width: 100vw;
+}
+
 
 @media (max-width: 499px) {
+
+  .search {
+    display: grid;
+    grid-template-rows: 1fr;
+    margin: 5px;
+    padding: 5px;
+  }
   .search-btn {
     margin-top: 5px;
+    width: 99%;
   }
-  input,
+
+  .search input,
   label {
-    margin-left: 5px;
+    margin: 0 auto;
+    width: 99%;
   }
 }
 
 @media (min-width: 500px) {
+
+  .search {
+    display: grid;
+    grid-template-rows: 1fr;
+    margin-bottom: 5px;
+    padding: 5px;
+  }
+
   .search-btn {
     width: 150px;
   }
@@ -151,6 +158,11 @@ input {
     max-width: 400px;
     height: 40px;
     margin-left: 15px;
+  }
+  #docks {
+    display: flex;
+    flex-wrap: wrap;
+
   }
 }
 </style>
