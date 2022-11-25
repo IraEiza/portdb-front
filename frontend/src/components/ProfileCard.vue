@@ -30,12 +30,22 @@ input {
     width: 240px;
     height: 30px;
 }
-
 .card {
+    background-color: antiquewhite;
+    padding: 10px;
+    margin: 10px auto;
+    width: 400px;
+    height: auto;
+}
+
+@media (max-width: 719px) {
+    .card {
     background-color: antiquewhite;
     padding: 10px;
     margin: 10px auto;
     width: 320px;
     height: auto;
 }
-</style>
+}
+
+</style>z

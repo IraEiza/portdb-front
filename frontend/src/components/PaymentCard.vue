@@ -70,12 +70,6 @@
         width: 100%;
     }
     
-    .pay-button:hover {
-        background-color: orange;
-    }
-    .pay-button:focus {
-        background-color: orange;
-    }
 
 
 

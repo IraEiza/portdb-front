@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id="ships" >
         <ShipCard :ship="ship" v-if="!editShip" @change-ship="changeShip"/>
         <EditShipCard :ship="ship" v-if="editShip" @save-ship="saveData"/>
     </div>
@@ -33,5 +33,11 @@ import EditShipCard from '../components/EditShipsCard.vue';
 </script>
 
 <style scoped>
-    
+    @media (max-width: 719px) {
+        #ships {
+            width: 300px;
+            margin: 0 auto;
+
+        }
+    }
 </style>
