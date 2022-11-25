@@ -6,7 +6,7 @@
   <div class="col-md-6 p-4 ps-md-0">
     <h5 class="mt-0">Don't you know where to stay tonight?</h5>
     <a href="https://hotelerioapp.netlify.app/" target="_blank" class="stretched-link">HOTELERIO!</a>
-    <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
+    <p>Enjoy a restful sleep in the best hotel in Las Palmas. Hotelerio offers 3 types of rooms according to the needs of the client and allows access to pets. Take advantage of the benefits for being customers of the pier!</p>
   </div>
 </div>
 
@@ -15,9 +15,9 @@
     <img src="../components/icons/repair.png" class="w-100" alt="...">
   </div>
   <div class="col-md-6 p-4 ps-md-0">
-    <h5 class="mt-0">Has your mobile been broken?</h5>
+    <h5 class="mt-0">Has your phone been broken?</h5>
     <a href="#" target="_blank" class="stretched-link">JVJ REPAIR!</a>
-    <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
+    <p>The JVJ Reparations team are experts in the repair of all types of electronic devices. If during your trip any of them has suffered any damage, do not hesitate to contact them. They will leave them like new!</p>
   </div>
 </div>
 
@@ -28,7 +28,7 @@
   <div class="col-md-6 p-4 ps-md-0">
     <h5 class="mt-0">Do you feel alone?</h5>
     <a href="https://dyreven.netlify.app/" target="_blank" class="stretched-link">DYREVERN!</a>
-    <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
+    <p>If during the trip you have thought of adopting a pet to keep you company, you have found the right place. DYREVEN will take care of finding the pet that best suits you to accompany you throughout your journey.</p>
   </div>
 </div>
 
@@ -39,7 +39,7 @@
   <div class="col-md-6 p-4 ps-md-0">
     <h5 class="mt-0">Are you hungry?</h5>
     <a href="#" target="_blank" class="stretched-link">COOKING NOW!</a>
-    <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
+    <p>If you are vegan, celiac, lactose intolerant or don't know what to cook, this app is your salvation. COOKING NOW has thousands of recipes to suit different tastes and diets. It also offers the possibility of filtering recipes by ingredients, so you won't have to worry about stock!</p>
   </div>
 </div>
 
@@ -48,9 +48,9 @@
     <img src="../components/icons/law.png" class="w-100" alt="...">
   </div>
   <div class="col-md-6 p-4 ps-md-0">
-    <h5 class="mt-0">Have you damaged the neighbor's boat?</h5>
-    <a href="https://law-firm2.netlify.app/" target="_blank" class="stretched-link">LAW FIRM!</a>
-    <p>Another instance of placeholder content for this other custom component. It is intended to mimic what some real-world content would look like, and we're using it here to give the component a bit of body and size.</p>
+    <h5 class="mt-0">Have you damaged your neighbor's boat?</h5>
+    <a href="https://law-firm2.netlify.app/" target="_blank" class="stretched-link">LAWFIRM!</a>
+    <p>We all make mistakes and accidents happen often. If the situation has gotten out of hand and there is no way to resolve the conflict, LAWFIRM will take care of managing it for you.</p>
   </div>
 </div>
 </template>
@@ -75,12 +75,13 @@
 }
 
 .img {
+  margin-top: 15px;
   width: 200px;
 }
 
 @media (max-width: 719px) {
 	.img {
-    display: none;
+    width: 100px;
   }
   .hotelerio, .repair, .animals, .cook, .law {
   display: flex;

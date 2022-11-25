@@ -47,7 +47,7 @@ import SaveButton from './SaveButton.vue';
     }
 
     input {
-        width: 250px;
+        width: 210px;
         height: 30px;
     }
 

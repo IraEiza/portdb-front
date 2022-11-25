@@ -207,9 +207,7 @@ export default {
 </script>
 
 <style scoped>
-#profile {
-  margin: 5px;
-}
+
 h1 {
   margin-top: 10px;
 }
@@ -240,6 +238,6 @@ h1 {
   .card-display {
     display: flex;
     flex-wrap: wrap;
-		  }
+	}
 }
 </style>
