@@ -25,12 +25,5 @@
         
 }
 
-.save:hover {
-  background-color: orange;
- 
-}
-.save:focus {
-  background-color: orange;
-}
 
 </style>

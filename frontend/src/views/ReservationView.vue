@@ -161,8 +161,7 @@ input {
   }
   #docks {
     display: flex;
-    flex-wrap: wrap;
-
+    flex-direction: column;
   }
 }
 </style>
